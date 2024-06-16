@@ -4,16 +4,8 @@
 body{
     overflow: hidden;
 }
-.oscuro{
-    display: none;
-    z-index: 100;
-    position: absolute;
-    box-shadow: inset 0px 0px 130px 56px rgba(0,0,0,0.59);
-    width: 100vw;
-    height: 100vh;
-}
 body {
-    ffont-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #f0f0f0;
     height: 100vh;
     margin: 0;
