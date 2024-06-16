@@ -1,0 +1,117 @@
+* {
+    overflow: hidden;
+}
+.oscuro{
+    display: none;
+    z-index: 100;
+    position: absolute;
+    box-shadow: inset 0px 0px 130px 56px rgba(0,0,0,0.59);
+    width: 100vw;
+    height: 100vh;
+}
+body {
+    ffont-family: "Poppins", sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    margin: 0;
+}
+
+.mensaje-para-padre {
+    display: none;
+    z-index: 99;
+    background-color: #5e004b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+}
+
+.mensaje-para-padre p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #cdcdcd;
+}
+
+.mensaje-para-padre p:first-child {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.mensaje-para-padre p:nth-last-child(2) {
+    font-style: italic;
+}
+
+.mensaje-para-padre p:last-child {
+    font-weight: bold;
+}
+
+.heart {
+    position: absolute;
+    width:50vmin;
+    background:
+            radial-gradient(circle at 60% 65%, rgb(126, 0, 168) 64%, transparent 65%) top left,
+            radial-gradient(circle at 40% 65%, rgb(126, 0, 168) 64%, transparent 65%) top right,
+            linear-gradient(to bottom left, rgb(126, 0, 168) 41.8%,transparent 43%) bottom left ,
+            linear-gradient(to bottom right, rgb(126, 0, 168) 41.8%,transparent 43%) bottom right;
+    background-size:50% 50%;
+    animation: color-change-2x 1s infinite, heartbeat 1s infinite;
+    background-repeat:no-repeat;
+    display:inline-block;
+}
+.heart::before {
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+.heart:hover{
+    cursor: pointer;
+    animation-play-state: paused;
+    fill: #c600d8;
+    transform-origin: center center;
+    transform: scale(1.01);
+}
+
+
+@-webkit-keyframes heartbeat {
+    10% {
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        transform: scale(1.01);
+    }
+}
+
+
+@keyframes heartbeat {
+    10% {
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        transform: scale(1.01);
+    }
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-auto-rows: 200px; /* Altura automática de las filas */
+    gap: 10px; /* Espacio entre celdas */
+    padding: 10px; /* Espaciado interior del contenedor */
+}
+
+.grid-item {
+    overflow: hidden; /* Evita que las imágenes sobresalgan */
+    position: relative; /* Posicionamiento relativo para controlar el tamaño de las imágenes */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    position: absolute; /* Posicionamiento absoluto para ocupar todo el espacio de la celda */
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.grid-item:nth-child(odd) img {
+    transform: scale(1.1); /* Escala ligeramente las imágenes en las posiciones impares */
+}
