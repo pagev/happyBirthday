@@ -1,6 +1,9 @@
 * {
     overflow: hidden;
 }
+body{
+    overflow: hidden;
+}
 .oscuro{
     display: none;
     z-index: 100;
